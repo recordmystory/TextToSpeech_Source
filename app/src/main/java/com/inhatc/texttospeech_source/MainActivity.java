@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    protected void onDestroy() {
+    protected void onDestroy() { //앱이 완전히 끝날 때 실행
         super.onDestroy();
         if(objTTS!=null){
             objTTS.stop();
@@ -69,9 +69,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
             case R.id.btnTTS:
                 strInputText=editTextInput.getText().toString();
-                objTTS.setPitch(1.0f);
-                objTTS.setSpeechRate(1.0f);
+                objTTS.setPitch(1.0f); // voice High/Low
+                objTTS.setSpeechRate(1.0f); // voice speed
 
+                //Text -> Speech
                 objTTS.speak(strInputText, TextToSpeech.QUEUE_FLUSH, null);
                 break;
             default:
