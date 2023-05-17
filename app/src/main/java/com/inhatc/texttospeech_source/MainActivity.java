@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         CheckPermission();
 
         editTextInput.setOnFocusChangeListener(this);
-        btnTTS.setOnFocusChangeListener(this);
+        btnTTS.setOnClickListener(this);
 
         objTTS=new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
